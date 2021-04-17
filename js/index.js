@@ -56,7 +56,7 @@ database.ref('rolls').on('value', (snapshot) => {
 })
 
 database.ref('spinning').on('value', (snapshot) => {
-  app.spinning = snapshot.val()
+  app.spinning = snapshot.val() === "true" ? true : false
   $("#changeOutcome").prop('disabled', app.spinning ? true : null)
   $("#choices").prop('disabled', app.spinning ? true : null)
 })
